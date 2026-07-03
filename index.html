@@ -5,10 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For You ❤️</title>
+<title>❤️ Nelly ❤️</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
@@ -18,160 +17,170 @@
 <div id="stars"></div>
 <div id="hearts"></div>
 
-<!-- MUSIC -->
-<audio id="music" loop>
-<source src="music/song.mp3" type="audio/mp3">
-</audio>
+<!-- ===================== -->
+<!-- 🌌 OPENING SCREEN -->
+<!-- ===================== -->
+<section id="intro">
+    <div class="intro-box">
+        <h1 id="introText">Hey, My Love... ❤️</h1>
+        <p>Something special is waiting for you</p>
+        <button onclick="startSite()">Open My Gift ❤️</button>
+    </div>
+</section>
+
+<!-- ===================== -->
+<!-- 🏠 MAIN WEBSITE -->
+<!-- ===================== -->
+<div id="main" class="hidden">
 
 <!-- HERO -->
-<section class="hero" id="home">
-<div class="glass">
-<h1 class="title">For My Girl ❤️</h1>
+<section class="hero">
 
-<p class="subtitle">
-This website is made only for you.<br>
-Every special day unlocks a piece of my heart.
+    <div class="glass">
+
+        <h1>❤️ For Nelly ❤️</h1>
+        <p class="subtitle">From the boy who can't wait to hug you.</p>
+
+        <h2 class="count-title">Until I finally see you, My Love ❤️</h2>
+
+        <div class="countdown">
+            <div><span id="days">00</span><p>Days</p></div>
+            <div><span id="hours">00</span><p>Hours</p></div>
+            <div><span id="minutes">00</span><p>Minutes</p></div>
+            <div><span id="seconds">00</span><p>Seconds</p></div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- 🎁 GIFTS -->
+<!-- ===================== -->
+<section class="gifts">
+
+    <h2>🎁 Your Special Moments</h2>
+
+    <div class="gift-grid">
+
+        <div class="gift locked" id="gift1">
+            <h3>🌸 Name Day</h3>
+            <p>July 7</p>
+        </div>
+
+        <div class="gift locked" id="gift2">
+            <h3>🎂 Birthday</h3>
+            <p>July 12</p>
+        </div>
+
+        <div class="gift locked" id="gift3">
+            <h3>❤️ One Month</h3>
+            <p>July 14</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- 🌸 NAME DAY -->
+<!-- ===================== -->
+<section id="nameday" class="page hidden">
+
+<div class="letter glass">
+
+<h1>🌸 Happy Name Day, My Love 🌸</h1>
+
+<p>
+My beautiful Baby,<br><br>
+
+Even if I'm not there with you, you're always in my heart.<br><br>
+
+You make everything feel brighter just by being you.<br><br>
+
+I hope today brings you happiness, laughter, and love.<br><br>
+
+I miss you... and I can't wait to finally hold you.<br><br>
+
+Love you always ❤️
 </p>
 
-<button class="btn" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})">
-Start
-</button>
-
-</div>
-</section>
-
-<!-- COUNTDOWN -->
-<section id="countdown" class="section">
-<h2>⏳ Until I see you again</h2>
-
-<div class="countdown">
-<div><span id="days">00</span><p>Days</p></div>
-<div><span id="hours">00</span><p>Hours</p></div>
-<div><span id="minutes">00</span><p>Minutes</p></div>
-<div><span id="seconds">00</span><p>Seconds</p></div>
-</div>
-
-<p class="small-text">Every second brings me closer to you ❤️</p>
-</section>
-
-<!-- GIFTS -->
-<section id="gifts" class="section">
-
-<h2>🎁 Your Gifts</h2>
-
-<div class="gift-container">
-
-<div class="gift locked" id="gift-nameday">
-<div class="lock">🔒</div>
-<h3>Name Day</h3>
-<p>July 7</p>
-<button disabled>Locked</button>
-</div>
-
-<div class="gift locked" id="gift-birthday">
-<div class="lock">🔒</div>
-<h3>Birthday</h3>
-<p>July 12</p>
-<button disabled>Locked</button>
-</div>
-
-<div class="gift locked" id="gift-anniversary">
-<div class="lock">🔒</div>
-<h3>1 Month</h3>
-<p>July 14</p>
-<button disabled>Locked</button>
-</div>
+<button onclick="goHome()">❤️ Back Home</button>
 
 </div>
 
 </section>
 
-<!-- NAME DAY -->
-<section id="nameday" class="hidden section">
+<!-- ===================== -->
+<!-- 🎂 BIRTHDAY -->
+<!-- ===================== -->
+<section id="birthday" class="page hidden">
+
 <div class="letter glass">
-<h1>🌸 Happy Name Day 🌸</h1>
+
+<h1>🎂 Happy Birthday, My Love 🎂</h1>
+
 <p>
-My love,<br><br>
-
-Happy Name Day ❤️<br><br>
-
-You are one of the most special people in my life.<br><br>
-
-Even if I can't be there physically, my heart is always with you.<br><br>
-
-I hope today brings you happiness and peace.<br><br>
-
-I love you endlessly ❤️
-</p>
-</div>
-</section>
-
-<!-- BIRTHDAY -->
-<section id="birthday" class="hidden section">
-<div class="letter glass">
-<h1>🎂 Happy Birthday 🎂</h1>
-<p>
-My beautiful girl,<br><br>
+My Baby,<br><br>
 
 Today is your day ❤️<br><br>
 
-I wish I could hug you right now.<br><br>
+I wish I could be there to hold your hand, kiss you, and celebrate with you properly.<br><br>
 
-You mean everything to me.<br><br>
+But soon I will.<br><br>
 
-Thank you for being in my life.<br><br>
+You are my happiness, my peace, my everything.<br><br>
 
-I love you more than words can say ❤️
+Happy Birthday, Nelly ❤️
 </p>
+
+<button onclick="goHome()">❤️ Back Home</button>
+
 </div>
+
 </section>
 
-<!-- ANNIVERSARY -->
-<section id="anniversary" class="hidden section">
+<!-- ===================== -->
+<!-- ❤️ ANNIVERSARY -->
+<!-- ===================== -->
+<section id="anniversary" class="page hidden">
+
 <div class="letter glass">
+
 <h1>❤️ One Month Together ❤️</h1>
+
 <p>
-My love,<br><br>
+My Love,<br><br>
 
-One month with you already feels like a dream.<br><br>
+One month with you already feels unreal.<br><br>
 
-I can't wait for everything ahead of us.<br><br>
+Even distance couldn't change what I feel for you.<br><br>
 
-This is only the beginning of our story ❤️
+This is just the beginning of our story...<br><br>
+
+And I can't wait for everything ahead of us ❤️
 </p>
+
+<button onclick="goHome()">❤️ Back Home</button>
+
 </div>
+
 </section>
 
-<!-- EXTRA LOVE SECTION -->
-<section id="reasons" class="section">
+<!-- ===================== -->
+<!-- 💖 EXTRA LOVE SECTION -->
+<!-- ===================== -->
+<section class="extras">
 
 <h2>💖 Reasons I Love You</h2>
 
-<div class="reasons-box glass">
-<ul>
-<li>Your smile</li>
-<li>Your voice</li>
-<li>Your kindness</li>
-<li>The way you care</li>
-<li>How you make me feel</li>
-<li>Just being you ❤️</li>
-</ul>
-</div>
-
-</section>
-
-<!-- SECRET MESSAGE -->
-<section class="section hidden-message">
-
-<h2>💌 Secret</h2>
-
 <div class="glass">
 <p>
-If you're reading this...<br><br>
-
-I miss you.<br>
-I love you.<br>
-And I always will. ❤️
+Your smile ❤️<br>
+Your laugh ❤️<br>
+Your voice ❤️<br>
+Your kindness ❤️<br>
+And because you're you, My Love ❤️
 </p>
 </div>
 
@@ -179,8 +188,10 @@ And I always will. ❤️
 
 <!-- FOOTER -->
 <footer>
-<p>Made with endless love ❤️</p>
+Made with everything I have... just for you, Nelly ❤️
 </footer>
+
+</div>
 
 <script src="script.js"></script>
 
