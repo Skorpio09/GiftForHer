@@ -195,3 +195,118 @@ setInterval(createHeart, 500);
 // ===============================
 
 checkUnlocks();
+// ===============================
+// 💝 RANDOM WAIT MESSAGES
+// ===============================
+const waitMessages = [
+    "Patience, my love! You have to wait just a little longer... ❤️",
+    "No peeking! 🤫 This surprise isn't ready for you yet, beautiful.",
+    "I know you can't wait, but good things come to those who wait! 😘",
+    "🔒 Locked! You'll have to count down the days with me, Nelly.",
+    "A special letter is resting inside... wait until the right day to read it! 🌸",
+    "Not yet, my beautiful girl! Let the anticipation build up a little. 🥰",
+    "Stop clicking me! You have to wait, love! 😂❤️"
+];
+
+function showCustomAlert() {
+    const alertBox = document.getElementById("customAlert");
+    const alertMessage = document.getElementById("alertMessage");
+    
+    // Pick a random message from the array
+    const randomIndex = Math.floor(Math.random() * waitMessages.length);
+    alertMessage.innerText = waitMessages[randomIndex];
+    
+    // Smoothly show it
+    alertBox.classList.remove("hidden");
+    setTimeout(() => {
+        alertBox.classList.add("show");
+    }, 10);
+}
+
+function closeAlert() {
+    const alertBox = document.getElementById("customAlert");
+    alertBox.classList.remove("show");
+    setTimeout(() => {
+        alertBox.classList.add("hidden");
+    }, 400); // Wait for the fade-out transition to finish
+}
+
+// Close popup if clicking outside the glass box
+window.onclick = function(event) {
+    const alertBox = document.getElementById("customAlert");
+    if (event.target === alertBox) {
+        closeAlert();
+    }
+}
+
+
+// ===============================
+// 🔒 ONLY CONTROL CLICK ACCESS (UPDATED)
+// ===============================
+
+function handleGift(giftId, unlockTime, pageId) {
+
+    const gift = document.getElementById(giftId);
+    if (!gift) return;
+
+    const now = new Date().getTime();
+
+    // ALWAYS SHOW BOX
+    gift.style.display = "block";
+
+    if (now < unlockTime) {
+
+        // 🔒 LOCKED (visible but not usable)
+        gift.classList.add("locked");
+
+        gift.onclick = () => {
+            showCustomAlert(); // Custom popup instead of alert()
+        };
+
+    } else {
+
+        // 🔓 UNLOCKED
+        gift.classList.remove("locked");
+
+        gift.onclick = () => openPage(pageId);
+    }
+}
+
+
+// ===============================
+// 📄 OPEN LETTER (UPDATED)
+// ===============================
+
+function openPage(pageId) {
+
+    const page = document.getElementById(pageId);
+    const now = new Date().getTime();
+
+    // 🔒 SAFETY CHECK (prevents manual opening)
+    if (
+        (pageId === "nameday" && now < nameDayDate) ||
+        (pageId === "birthday" && now < birthdayDate) ||
+        (pageId === "anniversary" && now < anniversaryDate)
+    ) {
+        showCustomAlert(); // Custom popup instead of alert()
+        return;
+    }
+
+    document.querySelector(".hero").style.display = "none";
+    document.querySelector(".gifts").style.display = "none";
+    document.querySelector(".extras").style.display = "none";
+
+    document.querySelectorAll(".page").forEach(p => {
+        p.classList.add("hidden");
+    });
+
+    page.classList.remove("hidden");
+
+    // ✉️ envelope animation
+    setTimeout(() => {
+        const envelope = page.querySelector(".envelope");
+        if (envelope) envelope.classList.add("open");
+    }, 300);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
