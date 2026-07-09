@@ -6,7 +6,7 @@ const nameDayDate = new Date("July 7, 2026 00:00:00").getTime();
 const birthdayDate = new Date("July 12, 2026 00:00:00").getTime();
 const anniversaryDate = new Date("July 14, 2026 00:00:00").getTime();
 
-const reunionDate = new Date("July 12, 2026 12:00:00").getTime();
+const reunionDate = new Date("July 12, 2026 08:00:00").getTime();
 
 
 // ===============================
